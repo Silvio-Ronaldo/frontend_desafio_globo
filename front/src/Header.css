@@ -1,5 +1,5 @@
-header {
-    display: flex;
+header { 
+    display: block;
     flex-grow: 1;
     align-items: flex-start;
     margin-bottom: 20px;

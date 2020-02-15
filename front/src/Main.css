@@ -1,0 +1,25 @@
+main {
+    display: grid;
+    flex: 1;
+}
+
+main ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+}
+
+main ul li {
+    background: blue;
+    text-align: center;
+    padding: 5px;
+    height: 100px;
+    width: 200px;
+}
+
+@media (max-width: 650px) {
+    main ul {
+        grid-template-columns: 1fr;
+    }
+}

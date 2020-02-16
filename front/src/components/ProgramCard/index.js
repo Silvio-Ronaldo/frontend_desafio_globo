@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Image, Info, Title, Description } from './styles';
-import { Card, InputGroup, Modal, Button, FormControl } from 'react-bootstrap';
+import Moment from 'react-moment';
+import { Container, Info, Title, Description } from './styles';
+import { Modal, Button } from 'react-bootstrap';
 import QuestionModal from '../../components/QuestionModal';
 import Item from '../QuestionInpunt'
 
@@ -15,7 +16,7 @@ export default function Header(questionary) {
     <Container className="col-sm-4" >
       <Info>
         <Title className="" onClick={handleShow}>{questionary.formName}</Title>
-        <Description>{questionary.date}</Description>
+        <Description> <Moment format="DD/MM/YYYY HH:mm">{questionary.date}</Moment></Description>
       </Info>
       <QuestionModal
         questionary={questionary}

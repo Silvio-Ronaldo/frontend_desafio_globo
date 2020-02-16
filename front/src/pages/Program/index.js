@@ -17,11 +17,8 @@ export default function Program({ match }) {
       setProgram(program.data);
       const questionary = await api.get(`/getQuestions/${id}`);
       setquestionaries(questionary.data);
-      const survey = await api.get(`/getSurvey/${id}`);
+      const survey = await api.get(`/getSurveys/${id}`);
       setSurveys(survey.data);
-
-      console.log(survey.data);
-      console.log(id);
     }
 
     loadInfo(match.params.id);

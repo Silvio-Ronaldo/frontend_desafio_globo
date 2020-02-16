@@ -31,7 +31,7 @@ function App() {
         <div className="container-fluid h-100">
           <div className="row h-100">
           <Card className="col-sm-8 div-main-body">
-            <Card.Header as="h5">Rank de Usuários</Card.Header>
+            <Card.Header as="h5">Programação</Card.Header>
               <Card.Body className="overflow-auto"> 
                 <Card.Text>
               

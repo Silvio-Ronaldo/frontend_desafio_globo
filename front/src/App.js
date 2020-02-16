@@ -3,6 +3,7 @@ import api from './services/api';
 import './App.css';
 import { Navbar, Nav, Form, FormControl, Button, Card } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
+import Routes from './routes';
 
 function App() {
   const [programs, setPrograms] = useState([]);

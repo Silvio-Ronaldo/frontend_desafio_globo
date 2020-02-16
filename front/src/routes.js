@@ -7,7 +7,7 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/encontro" component={EncontroFB} />
+                <Route path="/Programs/:id" component={EncontroFB} />
             </Switch>
         </BrowserRouter>
     );

@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
+import Item from '../../components/ProgramCard'
 import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Program({match}) {
   const [program, setProgram] = useState([]);
+  const [questionaries, setquestionaries] = useState([]);
 
   useEffect(() => {
     async function loadInfo(id) {
       const program = await api.get(`/getProgram/${id}`);
       setProgram(program.data);
+      console.log(program.data);
+      const questionary = await api.get(`/getQuestions/${id}`);
+      console.log(questionary.data);
+      setquestionaries(questionary.data);
     }
 
     loadInfo(match.params.id);
@@ -48,7 +54,7 @@ export default function Program({match}) {
             <Card.Title as="h5">{program.name}
             </Card.Title>
             <Card.Header className="bg-white">
-              <Nav variant="pills" defaultActiveKey="#first">
+              <Nav variant="tabs" defaultActiveKey="#first">
                 <Nav.Item>
                   <Nav.Link href="#first">Questionários</Nav.Link>
                 </Nav.Item>
@@ -61,23 +67,11 @@ export default function Program({match}) {
               </Nav>
             </Card.Header>
             <Card.Body>
-              <Card.Subtitle className="mb-2 text-muted text-center">Conteúdos interativos do *programa*</Card.Subtitle>
-              <Card.Text className="row" id="questionary-container">
-                <Card body className="col-sm-3">
-                  <Card.Text>Questionário 1</Card.Text>
-                </Card>
-                <Card body className="col-sm-3">
-                  <Card.Text>Questionário 1</Card.Text>
-                </Card>
-                <Card body className="col-sm-3">
-                  <Card.Text>Questionário 1</Card.Text>
-                </Card>
-                <Card body className="col-sm-3">
-                  <Card.Text>Questionário 1</Card.Text>
-                </Card>
-                <Card body className="col-sm-3">
-                  <Card.Text>Questionário 1</Card.Text>
-                </Card>
+              <Card.Subtitle className="mb-2 text-muted text-center">{program.description}</Card.Subtitle>
+              <Card.Text className="row text-left" id="questionary-container">
+                {questionaries.map(questionary => (
+                  <Item {...questionary} />
+                ))}
               </Card.Text>
             </Card.Body>
           </Card>

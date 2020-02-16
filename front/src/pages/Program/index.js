@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
 import Item from '../../components/ProgramCard'
-<<<<<<< HEAD
-import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, ProgressBar } from 'react-bootstrap';
-=======
-import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, Tabs, Tab } from 'react-bootstrap';
->>>>>>> Alterando layout tela programa
+import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, ProgressBar, Tabs, Tab } from 'react-bootstrap';
+
 import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Program({ match }) {

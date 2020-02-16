@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card, InputGroup, Modal, Button, FormControl, Alert } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 import Header from '../../components/Header';
+import Rank from '../../components/Rank';
 import Item from '../../components/Card';
 import { Container } from './styles.js';
 import api from '../../services/api.js';
@@ -142,8 +143,11 @@ function Main() {
                 <Button variant="dark" onClick={gravarPrograma}>
                   Salvar
                 </Button>
-              </Modal.Footer>
-              </Modal>
+                    <Button variant="dark" onClick={handleClose}>
+                      Salvar
+                </Button>
+                  </Modal.Footer>
+                </Modal>
               </Card.Header>
               <Card.Body className="overflow-auto">
                 <Card.Text className="row justify-content-center" id="program-container">
@@ -157,13 +161,8 @@ function Main() {
               <Card.Header as="h5">Rank de Usuários</Card.Header>
               <Card.Body className="overflow-auto">
                 <Card.Text>
-                  {users.map(user => (
-                    <Card.Body>
-                      <Card.Title className="row">
-                        <a className="col-sm-8">{user.name}</a>
-                        <a className="col-sm-4">Score:{user.score}</a>
-                      </Card.Title>
-                    </Card.Body>
+                  {users.map((user) => (
+                    < Rank {...user} />
                   ))}
                 </Card.Text>
               </Card.Body>

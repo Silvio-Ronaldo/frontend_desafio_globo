@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 import Header from '../../components/Header';
-import { Container, Item } from './styles.js';
+import Item from '../../components/Card';
+import { Container } from './styles.js';
 import api from '../../services/api.js';
 
 function Main() {
@@ -37,11 +38,7 @@ function Main() {
               <Card.Body className="overflow-auto">
                 <Card.Text className="row" id="program-container">
                   {programs.map(program => (
-                    <Item>
-                      <Card body id={program.id} className="program-card col-sm-3" to={`/Programa/${program.id}`}>
-                        <Card.Text>{program.name}</Card.Text>
-                      </Card>
-                    </Item>
+                    <Item {...program} />
                   ))}
                 </Card.Text>
               </Card.Body>

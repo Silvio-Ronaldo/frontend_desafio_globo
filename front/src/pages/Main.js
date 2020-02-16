@@ -64,7 +64,10 @@ function Main() {
               <Card.Text>
                 {users.map(user => (
                   <Card.Body>
-                    <Card.Title>{user.name}</Card.Title>
+                    <Card.Title className="row">
+                        <a className="col-sm-8">{user.name}</a>
+                        <a className="col-sm-4">Score:{user.score}</a>
+                      </Card.Title>
                   </Card.Body>
                 ))}
               </Card.Text>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
 import Item from '../../components/ProgramCard'
-import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink, Accordion } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, ProgressBar } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Program({match}) {
@@ -85,9 +85,10 @@ export default function Program({match}) {
                       <Accordion.Collapse eventKey="0">
                         <Card.Body>
                           <Card.Text className="row">
-                            <Button className="mx-1 bg-success">Sim</Button>
-                            <Button className="mx-1 bg-danger">Não</Button>
-                            <Button className="ml-5">Parcial</Button>
+                            <ProgressBar className="col-sm-12 p-0">
+                              <ProgressBar variant="success" now={70} label="70%" key={1} />
+                              <ProgressBar variant="danger" now={30} label="30%" key={2} />
+                            </ProgressBar>
                           </Card.Text>
                         </Card.Body>
                       </Accordion.Collapse>

@@ -12,34 +12,35 @@ export default function Header(questionary) {
 
   const questions = questionary.questions;
   return (
-    < Container className="col-sm-4" >
+    <Container className="col-sm-4" >
       <Info>
         <Title className="" onClick={handleShow}>{questionary.formName}</Title>
-
-        <QuestionModal
-          questionary={questionary}
-          type='getQuestion'
-        />
-
-        <Modal show={show} onHide={handleClose} animation={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Questionário</Modal.Title>
-          </Modal.Header>
-          <Modal.Body >
-            {questions.map((question) => (
-              <Item {...question} />
-            ))}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="light" onClick={handleClose}>
-              Cancelar
-        </Button>
-            <Button variant="dark" onClick={handleClose}>
-              Salvar
-        </Button>
-          </Modal.Footer>
-        </Modal>
+        <Description>{questionary.date}</Description>
       </Info>
+      <QuestionModal
+        questionary={questionary}
+        type='getQuestion'
+      />
+
+      <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Questionário</Modal.Title>
+        </Modal.Header>
+        <Modal.Body >
+          {questions.map((question) => (
+            <Item {...question} />
+          ))}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="light" onClick={handleClose}>
+            Cancelar
+        </Button>
+          <Button variant="dark" onClick={handleClose}>
+            Salvar
+        </Button>
+        </Modal.Footer>
+      </Modal>
+
     </Container>
   );
 }

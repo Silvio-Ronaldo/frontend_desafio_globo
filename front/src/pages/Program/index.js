@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
 import Item from '../../components/ProgramCard'
+<<<<<<< HEAD
 import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, ProgressBar } from 'react-bootstrap';
+=======
+import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, Tabs, Tab } from 'react-bootstrap';
+>>>>>>> Alterando layout tela programa
 import { MdAddCircleOutline } from 'react-icons/md';
 
-export default function Program({match}) {
+export default function Program({ match }) {
   const [program, setProgram] = useState([]);
   const [questionaries, setquestionaries] = useState([]);
 
@@ -20,9 +24,9 @@ export default function Program({match}) {
     }
 
     loadInfo(match.params.id);
-  }, []);
- 
-  return (  
+  }, [match.params.id]);
+
+  return (
     <div className="h-100">
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="/">Globo Quiz</Navbar.Brand>
@@ -46,58 +50,55 @@ export default function Program({match}) {
         </Navbar.Collapse>
       </Navbar>
 
-
       <div className="container-fluid h-100">
         <div className="row h-100">
           <Card className="col-sm-12 div-main-body text-center">
-            <Card.Title as="h5">{program.name}
-            </Card.Title>
+            <center>
+              <img src={program.uri} />
+            </center>
+            <Card.Title as="h5">{program.name}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted text-center">{program.description}</Card.Subtitle>
             <Card.Header className="bg-white">
-              <Nav variant="tabs" defaultActiveKey="#first">
-                <Nav.Item>
-                  <Nav.Link href="#first">Questionários</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="#link">Enquetes</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="#">Comentários</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Card.Header>
-            <Card.Body>
-              <Card.Subtitle className="mb-2 text-muted text-center">{program.description}</Card.Subtitle>
-              <Card.Text className="row text-left justify-content-center" id="questionary-container">
-                {questionaries.map(questionary => (
-                  <Item {...questionary} />
-                ))}
-              </Card.Text>
+              <Tabs defaultActiveKey="Quiz" id="uncontrolled-tab-example">
+                <Tab eventKey="Quiz" title="Quiz">
+                  <Card.Body>
+                    <Card.Text className="row text-left" id="questionary-container">
+                      {questionaries.map(questionary => (
+                        <Item {...questionary} />
+                      ))}
+                    </Card.Text>
 
-              /* Parte da enquete - mover depois */
-              <Card.Text className="row text-left" id="survey-container">
-                  <Accordion defaultActiveKey="1">
-                    <Card>
-                      <Card.Header>
-                        <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                          O Louro José é um animal?
+                  </Card.Body>
+                </Tab>
+                <Tab eventKey="Enquete" title="Enquete">
+                  <Card.Text className="row text-left" id="survey-container">
+                    <Accordion defaultActiveKey="1">
+                      <Card>
+                        <Card.Header>
+                          <Accordion.Toggle as={Button} variant="dark" eventKey="0">
+                            O Louro José é um animal?
                         </Accordion.Toggle>
-                      </Card.Header>
-                      <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                          <Card.Text className="row">
-                            <ProgressBar className="col-sm-12 p-0">
-                              <ProgressBar variant="success" now={70} label="70%" key={1} />
-                              <ProgressBar variant="danger" now={30} label="30%" key={2} />
-                            </ProgressBar>
-                          </Card.Text>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                  </Accordion>
-              </Card.Text>
-              /* Parte da enquete - mover depois */
 
-            </Card.Body>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                          <Card.Body>
+                            <Card.Text className="row">
+                              <ProgressBar className="col-sm-12 p-0">
+                                <ProgressBar variant="success" now={70} label="70%" key={1} />
+                                <ProgressBar variant="danger" now={30} label="30%" key={2} />
+                              </ProgressBar>
+                            </Card.Text>
+                          </Card.Body>
+                        </Accordion.Collapse>
+                      </Card>
+                    </Accordion>
+                  </Card.Text>
+                </Tab>
+                <Tab eventKey="Comentarios" title="Comentarios">
+                  <h1>dfsgdfs</h1>
+                </Tab>
+              </Tabs>
+            </Card.Header>
           </Card>
         </div>
       </div>

@@ -35,3 +35,11 @@
   height: 75vh;
   border-radius: 15px;
 }
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 15px 0 15px 0;
+}

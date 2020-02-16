@@ -2,13 +2,17 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
-  height:60px;
+  height:100px;
   background: #f2f2f2;
   margin-right: 10px;
   margin-top: 10px;
   padding: 10px;
   text-decoration: none;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Image = styled.img`
@@ -19,10 +23,7 @@ export const Image = styled.img`
 `;
 
 export const Info = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+
 `;
 
 export const Title = styled.h1`

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import { Card, InputGroup, Modal, Button, FormControl } from 'react-bootstrap';
+import { Card, InputGroup, Modal, Button, FormControl, Alert } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 import Header from '../../components/Header';
 import Rank from '../../components/Rank';
@@ -12,10 +13,51 @@ function Main() {
   const [programs, setPrograms] = useState([]);
   const [users, setUsers] = useState([]);
 
+  const [nome, setNome] = useState("");
+  const [horario, setHorario] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [descricao, setDescricao] = useState("");
+
   //Popup p/ cadastrar programas
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //Limpa form popup programa
+  function clearPopup() {
+    setNome("");
+    setDescricao("");
+    setHorario("");
+    setImagem("");
+    handleClose();
+  };
+  //valida form popup programa
+  async function validaForm() {
+    return (nome.length > 0 && horario.length > 0 && imagem.length > 0 || descricao.length > 0);
+  };
+  //Função p/ gravar novo programa
+  async function gravarPrograma() {
+    if (await validaForm()) {
+      const programa = await api.post('/storeProgram', {
+        "name": nome,
+        "description": descricao,
+        "schedule": horario,
+        "uri": imagem
+      })
+        .then(function (response) {
+          console.log('salvo com sucesso');
+          alert("salvo com sucesso!");
+        })
+        .catch(error => {
+          console.log(error);
+          alert("erro ao salvar no banco de dados!");
+        });
+      clearPopup();
+      window.location.reload()
+    } else {
+      alert("É necessário preencher todos os campos!");
+    }
+  };
 
   useEffect(() => {
     async function loadInfo() {
@@ -53,6 +95,9 @@ function Main() {
                       </InputGroup.Prepend>
                       <FormControl
                         aria-label="Default"
+                        placeholder="Nome do programa"
+                        value={nome}
+                        onChange={e => setNome(e.target.value)}
                         aria-describedby="inputGroup-sizing-default"
                       />
                     </InputGroup>
@@ -62,6 +107,21 @@ function Main() {
                       </InputGroup.Prepend>
                       <FormControl
                         aria-label="Default"
+                        value={horario}
+                        onChange={e => setHorario(e.target.value)}
+                        placeholder="Horário de transmissão"
+                        aria-describedby="inputGroup-sizing-default"
+                      />
+                    </InputGroup>
+                    <InputGroup className="mb-3" >
+                      <InputGroup.Prepend>
+                        <InputGroup.Text id="inputGroup-sizing-default">Imagem</InputGroup.Text>
+                      </InputGroup.Prepend>
+                      <FormControl
+                        aria-label="Default"
+                        placeholder="URL da imagem"
+                        value={imagem}
+                        onChange={e => setImagem(e.target.value)}
                         aria-describedby="inputGroup-sizing-default"
                       />
                     </InputGroup>
@@ -69,14 +129,18 @@ function Main() {
                       <InputGroup.Prepend>
                         <InputGroup.Text>Descrição</InputGroup.Text>
                       </InputGroup.Prepend>
-                      <FormControl as="textarea" aria-label="With textarea" />
+                      <FormControl as="textarea"
+                        aria-label="With textarea"
+                        value={descricao}
+                        onChange={e => setDescricao(e.target.value)}
+                        placeholder="Descrição" />
                     </InputGroup>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="light" onClick={handleClose} type="submit">
+                    <Button variant="light" onClick={clearPopup} type="submit">
                       Cancelar
                 </Button>
-                    <Button variant="dark" onClick={handleClose}>
+                    <Button variant="dark" onClick={gravarPrograma}>
                       Salvar
                 </Button>
                   </Modal.Footer>

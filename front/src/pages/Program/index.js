@@ -4,9 +4,20 @@ import './styles.css';
 import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 
-export default function Program() {
+export default function Program({match}) {
+  const [program, setProgram] = useState([]);
 
-  return (
+  useEffect(() => {
+    async function loadInfo(id) {
+      const program = await api.get(`/getProgram/${id}`);
+      setProgram(program.data);
+    }
+
+    loadInfo(match.params.id);
+  }, []);
+
+  
+  return (  
     <div className="h-100">
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="/">Globo Quiz</Navbar.Brand>
@@ -34,7 +45,8 @@ export default function Program() {
       <div className="container-fluid h-100">
         <div className="row h-100">
           <Card className="col-sm-12 div-main-body text-center">
-            <Card.Title as="h5">*NOME PROGRAMA*</Card.Title>
+            <Card.Title as="h5">{program.name}
+            </Card.Title>
             <Card.Header className="bg-white">
               <Nav variant="pills" defaultActiveKey="#first">
                 <Nav.Item>

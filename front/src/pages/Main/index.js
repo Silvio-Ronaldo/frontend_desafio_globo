@@ -142,11 +142,8 @@ function Main() {
                 </Button>
                 <Button variant="dark" onClick={gravarPrograma}>
                   Salvar
-                </Button>
-                    <Button variant="dark" onClick={handleClose}>
-                      Salvar
-                </Button>
-                  </Modal.Footer>
+                </Button>                
+                </Modal.Footer>
                 </Modal>
               </Card.Header>
               <Card.Body className="overflow-auto">

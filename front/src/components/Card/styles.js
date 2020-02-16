@@ -2,20 +2,23 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
-  width: 250px;
-  height:100px;
+  width: 275px;
+  height:130px;
   background: #f2f2f2;
   margin-right: 10px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   padding: 10px;
   text-decoration: none;
+  border-radius: 5px;
 `;
 
 export const Image = styled.img`
-  width: 100px;
-  height: 80px;
+  width: 120px;
+  height: 100px;
   margin-right: 10px;
+  border-radius: 5px;
 `;
 
 export const Info = styled.div`

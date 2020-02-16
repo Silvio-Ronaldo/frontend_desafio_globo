@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
 import Item from '../../components/ProgramCard'
-import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink, Accordion } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Program({match}) {
@@ -21,8 +21,7 @@ export default function Program({match}) {
 
     loadInfo(match.params.id);
   }, []);
-
-  
+ 
   return (  
     <div className="h-100">
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -73,6 +72,30 @@ export default function Program({match}) {
                   <Item {...questionary} />
                 ))}
               </Card.Text>
+
+              /* Parte da enquete - mover depois */
+              <Card.Text className="row text-left" id="survey-container">
+                  <Accordion defaultActiveKey="1">
+                    <Card>
+                      <Card.Header>
+                        <Accordion.Toggle as={Button} variant="dark" eventKey="0">
+                          O Louro José é um animal?
+                        </Accordion.Toggle>
+                      </Card.Header>
+                      <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                          <Card.Text className="row">
+                            <Button className="mx-1 bg-success">Sim</Button>
+                            <Button className="mx-1 bg-danger">Não</Button>
+                            <Button className="ml-5">Parcial</Button>
+                          </Card.Text>
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
+              </Card.Text>
+              /* Parte da enquete - mover depois */
+
             </Card.Body>
           </Card>
         </div>

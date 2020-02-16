@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import api from '../services/api.js';
-import './Program.css';
+import api from '../../services/api.js';
+import './styles.css';
 import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 

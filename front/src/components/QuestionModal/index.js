@@ -23,13 +23,14 @@ const customStyles = {
     backgroundColor: 'rgba(0, 0, 0, 0.7)'
   }
 };
-export default function QuestionModal({ questionary }) {
+export default function QuestionModal({ questionary, type }) {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [code, setCode] = useState('');
 
   async function handleQRCode(id) {
-    const uri = await api.get(`/generateQRCode/${id}`);
+    console.log(`/generateQRCode/${type}/${id}`);
+    const uri = await api.get(`/generateQRCode/${type}/${id}`);
     setCode(uri.data.qrcode);
     openModal();
   }

@@ -5,12 +5,12 @@ import QuestionModal from '../../components/QuestionModal';
 import Item from '../QuestionInpunt'
 
 export default function Header(questionary) {
-    //Popup p/ cadastrar questionario
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  //Popup p/ cadastrar questionario
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    const questions = questionary.questions;
+  const questions = questionary.questions;
   return (
     < Container className="col-sm-4" >
       <Info>
@@ -18,6 +18,7 @@ export default function Header(questionary) {
 
         <QuestionModal
           questionary={questionary}
+          type='getQuestion'
         />
 
         <Modal show={show} onHide={handleClose} animation={false}>
@@ -26,7 +27,7 @@ export default function Header(questionary) {
           </Modal.Header>
           <Modal.Body >
             {questions.map((question) => (
-             <Item {...question}/>
+              <Item {...question} />
             ))}
           </Modal.Body>
           <Modal.Footer>

@@ -51,7 +51,7 @@ function Main() {
               <Card.Text className="row" id="program-container">
                 {programs.map(program => (
                   <Card body  id={program.id} className="program-card col-sm-3">
-                    <a href="/Programa" className="program-card-link">{program.name}</a>
+                    <a href={'/Programa/'+program.id} className="program-card-link">{program.name}</a>
                   </Card>         
                 ))}
               </Card.Text>

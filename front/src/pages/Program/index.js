@@ -64,7 +64,6 @@ export default function Program({ match }) {
                         <Item {...questionary} />
                       ))}
                     </Card.Text>
-
                   </Card.Body>
                 </Tab>
                 <Tab eventKey="Enquete" title="Enquete">

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api.js';
 import './styles.css';
-import Item from '../../components/ProgramCard'
+import Item from '../../components/ProgramCard';
+import Survey from '../../components/SurveyCard';
 import { Navbar, Nav, Form, FormControl, Button, Card, Accordion, ProgressBar, Tabs, Tab } from 'react-bootstrap';
 
 import { MdAddCircleOutline } from 'react-icons/md';
@@ -9,15 +10,19 @@ import { MdAddCircleOutline } from 'react-icons/md';
 export default function Program({ match }) {
   const [program, setProgram] = useState([]);
   const [questionaries, setquestionaries] = useState([]);
+  const [surveys, setSurveys] = useState([]);
 
   useEffect(() => {
     async function loadInfo(id) {
       const program = await api.get(`/getProgram/${id}`);
       setProgram(program.data);
-      console.log(program.data);
       const questionary = await api.get(`/getQuestions/${id}`);
-      console.log(questionary.data);
       setquestionaries(questionary.data);
+      const survey = await api.get(`/getSurvey/${id}`);
+      setSurveys(survey.data);
+      
+      console.log(survey.data);
+      console.log(id);
     }
 
     loadInfo(match.params.id);
@@ -64,32 +69,17 @@ export default function Program({ match }) {
                         <Item {...questionary} />
                       ))}
                     </Card.Text>
-
                   </Card.Body>
                 </Tab>
-                <Tab eventKey="Enquete" title="Enquete">
-                  <Card.Text className="row text-left" id="survey-container">
-                    <Accordion defaultActiveKey="1">
-                      <Card>
-                        <Card.Header>
-                          <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                            O Louro José é um animal?
-                        </Accordion.Toggle>
 
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="0">
-                          <Card.Body>
-                            <Card.Text className="row">
-                              <ProgressBar className="col-sm-12 p-0">
-                                <ProgressBar variant="success" now={70} label="70%" key={1} />
-                                <ProgressBar variant="danger" now={30} label="30%" key={2} />
-                              </ProgressBar>
-                            </Card.Text>
-                          </Card.Body>
-                        </Accordion.Collapse>
-                      </Card>
-                    </Accordion>
-                  </Card.Text>
+                <Tab eventKey="Enquete" title="Enquete">
+                  <Card.Body>
+                    <Card.Text className="row text-left" id="survey-container">
+                      {surveys.map(survey => (
+                        <Survey {...survey} />
+                      ))}    
+                    </Card.Text>
+                  </Card.Body>
                 </Tab>
                 <Tab eventKey="Comentarios" title="Comentarios">
                   <h1>dfsgdfs</h1>

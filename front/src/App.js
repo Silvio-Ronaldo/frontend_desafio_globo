@@ -47,11 +47,11 @@ function App() {
               <MdAddCircleOutline className="float-right" size={25} color="black" Link />
             </Card.Header>
             <Card.Body className="overflow-auto">
-              {programs.map(program => (
-                <Card.Text className="row" id="program-container">
-                  {program.name}
-                </Card.Text>
-              ))}
+              <Card.Text className="row" id="program-container">
+                {programs.map(program => (
+                  <Card body className="col-sm-3" id={program.id}>{program.name}</Card>
+                ))}
+              </Card.Text>
             </Card.Body>
           </Card>
 

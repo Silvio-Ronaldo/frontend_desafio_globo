@@ -6,8 +6,6 @@ export const Container = styled(Link)`
   background: #f2f2f2;
   margin-right: 10px;
   margin-top: 10px;
-  display: flex;
-  flex-direction: row;
   padding: 10px;
   text-decoration: none;
   border-radius: 5px;
@@ -21,7 +19,10 @@ export const Image = styled.img`
 `;
 
 export const Info = styled.div`
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h1`

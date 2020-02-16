@@ -1,12 +1,16 @@
 import React from 'react';
-import { Container, Image, Info, Title, Description } from './styles';
+import { Container, Info, Title } from './styles';
+import QuestionModal from '../../components/QuestionModal';
 
 export default function Header(questionary) {
 
   return (
-    < Container className="col-sm-4">
+    <Container className="col-sm-4">
       <Info>
         <Title className="">{questionary.formName}</Title>
+        <QuestionModal
+          questionary={questionary}
+        />
       </Info>
     </Container>
   );

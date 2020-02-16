@@ -68,7 +68,7 @@ export default function Program({match}) {
             </Card.Header>
             <Card.Body>
               <Card.Subtitle className="mb-2 text-muted text-center">{program.description}</Card.Subtitle>
-              <Card.Text className="row text-left" id="questionary-container">
+              <Card.Text className="row text-left justify-content-center" id="questionary-container">
                 {questionaries.map(questionary => (
                   <Item {...questionary} />
                 ))}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, InputGroup, Modal, Button, FormControl } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 import Header from '../../components/Header';
 import Item from '../../components/Card';
@@ -10,6 +10,11 @@ import api from '../../services/api.js';
 function Main() {
   const [programs, setPrograms] = useState([]);
   const [users, setUsers] = useState([]);
+
+  //Popup p/ cadastrar programas
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     async function loadInfo() {
@@ -33,7 +38,48 @@ function Main() {
             <Card className="col-sm-8 div-main-body">
               <Card.Header as="h5">
                 Programação
-              <MdAddCircleOutline className="float-right" size={25} color="black" Link />
+                <Button variant="light" as="h5" className="float-right" onClick={handleShow}>
+                <MdAddCircleOutline size={25} color="black"/>
+              </Button>              
+              <Modal show={show} onHide={handleClose} animation={false}>
+              <Modal.Header closeButton>
+                <Modal.Title>Cadastrar Programas</Modal.Title>
+              </Modal.Header>
+              <Modal.Body >
+                <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text  id="inputGroup-sizing-default">Nome</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+                </InputGroup>             
+                <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-default">Horário</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+                </InputGroup>                
+                <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text>Descrição</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl as="textarea" aria-label="With textarea" />
+                </InputGroup>
+              </Modal.Body>              
+              <Modal.Footer>
+                <Button variant="light" onClick={handleClose} type="submit">
+                  Cancelar
+                </Button>
+                <Button variant="dark" onClick={handleClose}>
+                  Salvar
+                </Button>
+              </Modal.Footer>
+              </Modal>
               </Card.Header>
               <Card.Body className="overflow-auto">
                 <Card.Text className="row" id="program-container">
@@ -43,7 +89,6 @@ function Main() {
                 </Card.Text>
               </Card.Body>
             </Card>
-
             <Card className="col-sm-4 div-main-body">
               <Card.Header as="h5">Rank de Usuários</Card.Header>
               <Card.Body className="overflow-auto">

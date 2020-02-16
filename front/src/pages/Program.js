@@ -30,12 +30,26 @@ export default function Program() {
 
       <div className="container-fluid h-100">
         <div className="row h-100">
-          <Card className="col-sm-12 div-main-body">
-            <Card.Header>*Programa*</Card.Header>
+          <Card className="col-sm-12 div-main-body text-center">
+            <Card.Header className="bg-white">*Programa*</Card.Header>
             <Card.Body>
-              <Card.Subtitle>Conteúdos interativos do *programa*</Card.Subtitle>
-              <Card.Text>
-                cards menores de questionário
+              <Card.Subtitle className="mb-2 text-muted text-center">Conteúdos interativos do *programa*</Card.Subtitle>
+              <Card.Text className="row" id="questionary-container">
+                <Card body className="col-sm-3">
+                  <Card.Text>Questionário 1</Card.Text>
+                </Card>
+                <Card body className="col-sm-3">
+                  <Card.Text>Questionário 1</Card.Text>
+                </Card>
+                <Card body className="col-sm-3">
+                  <Card.Text>Questionário 1</Card.Text>
+                </Card>
+                <Card body className="col-sm-3">
+                  <Card.Text>Questionário 1</Card.Text>
+                </Card>
+                <Card body className="col-sm-3">
+                  <Card.Text>Questionário 1</Card.Text>
+                </Card>
               </Card.Text>
             </Card.Body>
           </Card>

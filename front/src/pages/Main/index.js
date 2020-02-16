@@ -35,7 +35,7 @@ function Main() {
               <MdAddCircleOutline className="float-right" size={25} color="black" Link />
               </Card.Header>
               <Card.Body className="overflow-auto">
-                <Card.Text className="row" id="program-container">
+                <Card.Text className="row justify-content-center" id="program-container">
                   {programs.map(program => (
                     <Item {...program} />
                   ))}

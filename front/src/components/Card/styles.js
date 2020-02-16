@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
-  width: 275px;
   height:130px;
   background: #f2f2f2;
   margin-right: 10px;

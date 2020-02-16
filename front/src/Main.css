@@ -1,5 +1,4 @@
 main {
-    display: grid;
     flex: 1;
 }
 
@@ -11,11 +10,22 @@ main ul {
 }
 
 main ul li {
-    background: blue;
+    background: whitesmoke;
     text-align: center;
     padding: 5px;
     height: 100px;
     width: 200px;
+    font-size: 15px;
+    font-family: Roboto, sans-serif;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+main ul li:hover {
+    background: green;
+    color: white;
 }
 
 @media (max-width: 650px) {

@@ -79,7 +79,7 @@ function Main() {
         <div className="container-fluid h-100">
           <div className="row h-100">
             <Card className="col-sm-8 div-main-body">
-              <Card.Header as="h5">
+              <Card.Header as="h5" className="bg-white">
                 Programação
                 <Button variant="light" as="h5" className="float-right" onClick={handleShow}>
                   <MdAddCircleOutline size={25} color="black" />
@@ -155,7 +155,7 @@ function Main() {
               </Card.Body>
             </Card>
             <Card className="col-sm-4 div-main-body">
-              <Card.Header as="h5">Rank de Usuários</Card.Header>
+              <Card.Header as="h5" className="bg-white">Rank de Usuários</Card.Header>
               <Card.Body className="overflow-auto">
                 <Card.Text>
                   {users.map((user) => (

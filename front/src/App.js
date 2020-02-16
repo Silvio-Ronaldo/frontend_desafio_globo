@@ -16,9 +16,6 @@ function App() {
             <Nav.Link href="https://globoplay.globo.com/assine/?dclid=&gclid=Cj0KCQiAyp7yBRCwARIsABfQsnQFtkCkJrrfkuMkmBYJ58CejLFwvVTbvCNbytxLgIIR5MRPL4MfsxcaAumDEALw_wcB">
               Home
             </Nav.Link>
-            <Nav.Link>
-            <MdAddCircleOutline size={25} color="white" Link/>
-            </Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Buscar Programas" className="mr-sm-2" />
@@ -31,7 +28,10 @@ function App() {
         <div className="container-fluid h-100">
           <div className="row h-100">
           <Card className="col-sm-8 div-main-body">
-            <Card.Header as="h5">Programação</Card.Header>
+            <Card.Header as="h5">
+              Programação
+              <MdAddCircleOutline className="float-right" size={25} color="black" Link/>
+            </Card.Header>
               <Card.Body className="overflow-auto"> 
                 <Card.Text>
               

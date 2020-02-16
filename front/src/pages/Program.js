@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api.js';
 import './Program.css';
-import { Navbar, Nav, Form, FormControl, Button, Card } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink } from 'react-bootstrap';
 import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Program() {
@@ -31,7 +31,20 @@ export default function Program() {
       <div className="container-fluid h-100">
         <div className="row h-100">
           <Card className="col-sm-12 div-main-body text-center">
-            <Card.Header className="bg-white">*Programa*</Card.Header>
+            <Card.Title as="h5">*NOME PROGRAMA*</Card.Title>
+            <Card.Header className="bg-white">
+              <Nav variant="pills" defaultActiveKey="#first">
+                <Nav.Item>
+                  <Nav.Link href="#first">Questionários</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#link">Enquetes</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#">Comentários</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Card.Header>
             <Card.Body>
               <Card.Subtitle className="mb-2 text-muted text-center">Conteúdos interativos do *programa*</Card.Subtitle>
               <Card.Text className="row" id="questionary-container">

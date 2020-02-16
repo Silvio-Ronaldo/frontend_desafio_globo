@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://https://api.github.com',
+    baseURL: 'https://globoapi.herokuapp.com',
 });
 
 export default api;

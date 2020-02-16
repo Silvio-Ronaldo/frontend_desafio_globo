@@ -19,6 +19,9 @@ export default function Program() {
             <Nav.Link href="https://globoplay.globo.com/assine/?dclid=&gclid=Cj0KCQiAyp7yBRCwARIsABfQsnQFtkCkJrrfkuMkmBYJ58CejLFwvVTbvCNbytxLgIIR5MRPL4MfsxcaAumDEALw_wcB" target="_blank">
               Globoplay
             </Nav.Link>
+            <Nav.Link href="/Partners">
+              Parceiros
+            </Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Buscar Programas" className="mr-sm-2" />

@@ -3,9 +3,9 @@ import api from './services/api';
 import './App.css';
 import {Navbar, Nav, Form, FormControl, Button, Card} from 'react-bootstrap';
 import {MdAddCircleOutline} from 'react-icons/md';
+import Routes from './routes';
 
 function App() {
-  
   return ( 
     <div className="h-100">
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -33,8 +33,8 @@ function App() {
               <MdAddCircleOutline className="float-right" size={25} color="black" Link/>
             </Card.Header>
               <Card.Body className="overflow-auto"> 
-                <Card.Text>
-              
+                <Card.Text className="row">
+
                 </Card.Text>
               </Card.Body>
             </Card>

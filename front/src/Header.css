@@ -1,9 +1,0 @@
-header { 
-    display: block;
-    flex-grow: 1;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    width: 30px;
-    background: teal;
-    color: white;
-}

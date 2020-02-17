@@ -1,6 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Card, NavItem, NavLink, Row, Image, Container, Col } from 'react-bootstrap';
-//import { Container } from './styles';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 export default function Header() {
   return (

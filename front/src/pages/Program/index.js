@@ -58,7 +58,7 @@ export default function Program({ match }) {
                   </Card.Body>
                 </Tab>
                 <Tab eventKey="Comentarios" title="Comentarios">
-                  <h1>dfsgdfs</h1>
+                  <h1>Delicinha</h1>
                 </Tab>
               </Tabs>
             </Card.Header>

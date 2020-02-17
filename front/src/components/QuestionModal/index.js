@@ -46,7 +46,9 @@ export default function QuestionModal({ questionary, type }) {
 
   return (
     <div>
-      <MdCameraAlt size={25} color="black" onClick={() => handleQRCode(questionary._id)} />
+      <center>
+        <MdCameraAlt size={25} color="black" onClick={() => handleQRCode(questionary._id)} />
+      </center>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

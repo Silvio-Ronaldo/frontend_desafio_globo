@@ -11,10 +11,10 @@ export default function Survey(survey) {
 
     useEffect(() => {
         async function loadSurvey() {
-            const { yes, no, total } = await api.get(`/getVotes/${survey._id}`);
-            setYes(yes);
-            setNo(no);
-            setTotal(total);
+            const { data } = await api.get(`/getVotes/${survey._id}`);
+            setYes(data.yes);
+            setNo(data.no);
+            setTotal(data.total);
         }
         loadSurvey();
     }, [no, survey._id, survey.id, total, yes]);
@@ -35,8 +35,8 @@ export default function Survey(survey) {
                     <Card.Body>
                         <Card.Text className="row">
                             <ProgressBar className="col-sm-12 p-0">
-                                <ProgressBar variant="success" now={(yes / total) * 100} label={`${(yes / total) * 100}%`} key={1} />
-                                <ProgressBar variant="danger" now={(no / total) * 100} label={`${(no / total) * 100}%`} key={2} />
+                                <ProgressBar variant="success" now={parseInt((yes / total) * 100)} label={`${(yes / total) * 100}%`} key={1} />
+                                <ProgressBar variant="danger" now={parseInt((no / total) * 100)} label={`${(no / total) * 100}%`} key={2} />
                             </ProgressBar>
                         </Card.Text>
                     </Card.Body>

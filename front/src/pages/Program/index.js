@@ -28,17 +28,13 @@ export default function Program({ match }) {
     <div className="h-100">
       <Header />
 
-      <div className="container-fluid h-100">
+      <div className="container-fluid h-100" style={{ padding: 0, margin: 0 }}>
         <div className="row h-100">
           <Card className="col-sm-12 div-main-body text-center">
-            <Card className="bg-white" border="0">
-              <center>
-                <Card.Img src={program.uri} alt="Card Image" />
-                <Card.ImgOverlay>
-                  <img src={program.uri} style={{ marginTop: 80 }} />
-                </Card.ImgOverlay>
-              </center>
-            </Card>
+            <center>
+              <Card style={{ background: `${program.background}`, height: 150, zIndex: 0, position: 'relative' }} />
+              <img src={program.uri} style={{ marginTop: -100, zIndex: 1, position: 'relative' }} />
+            </center>
             <Card.Title>{program.name}</Card.Title>
             <Card.Subtitle>{program.description}</Card.Subtitle>
             <Card.Header className="bg-white mt-5">

@@ -21,7 +21,7 @@ export default function Header() {
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Buscar Programas" className="mr-sm-2" />
-            <Button variant="outline-danger">Buscar</Button>
+            <Button variant="outline-danger" style={{ background: '#f31d1d', color: '#fff', fontWeight: 'bold' }}>Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

@@ -39,6 +39,8 @@ export default function Program({ match }) {
                 </Card.ImgOverlay>
               </center>
             </Card>
+            <Card.Title>{program.name}</Card.Title>
+            <Card.Subtitle>{program.description}</Card.Subtitle>
             <Card.Header className="bg-white mt-5">
               <Tabs defaultActiveKey="Quiz" id="uncontrolled-tab-example">
                 <Tab eventKey="Quiz" title="Quiz">

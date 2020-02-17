@@ -4,7 +4,7 @@ import { Accordion, Button, Card, ProgressBar } from 'react-bootstrap';
 export default function Survey(survey) {
 
     return (
-        <Accordion defaultActiveKey="1">
+        <Accordion className="col-sm-3" defaultActiveKey="1">
             <Card>
                 <Card.Header>
                     <Accordion.Toggle as={Button} variant="dark" eventKey="0">

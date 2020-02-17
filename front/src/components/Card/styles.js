@@ -25,6 +25,7 @@ export const Info = styled.div`
 `;
 
 export const Title = styled.h1`
+  margin-top: 10px;
   font-size:20px;
   color: #333;
 `;

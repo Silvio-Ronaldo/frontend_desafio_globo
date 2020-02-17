@@ -8,7 +8,7 @@ export default function Survey(survey) {
         <Accordion className="col-sm-6 mb-3 mx-auto" defaultActiveKey="1">
             <Card>
                 <Card.Header>
-                    <Accordion.Toggle className="col-sm-12" as={Button} variant="dark" eventKey="0">
+                    <Accordion.Toggle className="col-sm-12" as={Button} variant="light" eventKey="0">
                         {survey.content}
                     </Accordion.Toggle>
                     <QuestionModal

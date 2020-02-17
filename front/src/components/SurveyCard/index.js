@@ -13,8 +13,8 @@ export default function Survey(survey) {
         async function loadSurvey() {
             const { yes, no, total } = await api.get(`/getVotes/${survey._id}`);
             setYes(yes);
-            setYes(no);
-            setYes(total);
+            setNo(no);
+            setTotal(total);
         }
         loadSurvey();
     }, [no, survey._id, survey.id, total, yes]);

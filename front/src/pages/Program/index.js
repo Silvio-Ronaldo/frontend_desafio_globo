@@ -31,12 +31,15 @@ export default function Program({ match }) {
       <div className="container-fluid h-100">
         <div className="row h-100">
           <Card className="col-sm-12 div-main-body text-center">
-            <center>
-              <img src={program.uri} />
-            </center>
-            <Card.Title as="h5">{program.name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted text-center">{program.description}</Card.Subtitle>
-            <Card.Header className="bg-white">
+            <Card className="bg-white" border="0">
+              <center>
+                <Card.Img src={program.uri} alt="Card Image" />
+                <Card.ImgOverlay>
+                  <img src={program.uri} style={{ marginTop: 80 }} />
+                </Card.ImgOverlay>
+              </center>
+            </Card>
+            <Card.Header className="bg-white mt-5">
               <Tabs defaultActiveKey="Quiz" id="uncontrolled-tab-example">
                 <Tab eventKey="Quiz" title="Quiz">
                   <Card.Body>

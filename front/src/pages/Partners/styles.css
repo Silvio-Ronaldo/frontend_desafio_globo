@@ -30,3 +30,16 @@
       height: 100hv;
     }
   }
+
+  .teste{
+    border-radius: 100%;
+    border-color: white;
+    border-width:5px;
+    border-style: solid;
+    cursor: pointer;
+    transition: border-color 0.5s;
+  }
+
+  .teste:hover{
+    border-color: #555555;
+  }

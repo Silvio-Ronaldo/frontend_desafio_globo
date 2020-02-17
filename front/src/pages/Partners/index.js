@@ -16,11 +16,11 @@ export default function Paterns() {
                         <Card.Header className="bg-white" as="h6">Marcas parceiras</Card.Header>
                         <Card.Body>
                             <Card.Text className="row" id="questionary-container">
-                                <Image className="mx-auto" src="https://www.cocacolabrasil.com.br/content/dam/journey/br/pt/private/marcas/logos-marcas-redondas/logo-sprite.jpg" alt="Sprite logo" />
-                                <Image className="mx-auto" src="https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png" alt="Americanas logo" />
-                                <Image className="mx-auto" src="https://logodownload.org/wp-content/uploads/2018/05/picpay-logo-1.png" alt="PicPay logo" />
-                                <Image className="mx-auto" src="https://geekpublicitario.com.br/wp-content/uploads/2018/03/novo-logo-santander-fundo-vermelho.jpg" alt="Santander logo" />
-                                <Image className="mx-auto" src="https://logodownload.org/wp-content/uploads/2015/02/Burger-king-logo-5.png" alt="Burger King logo" />
+                                <Image className="mx-auto teste" src="https://ecoke.vteximg.com.br/arquivos/sprite_logo.jpg?v=636930900766070000" alt="Sprite logo" />
+                                <Image className="mx-auto teste" src="https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png" alt="Americanas logo" />
+                                <Image className="mx-auto teste" src="https://logodownload.org/wp-content/uploads/2018/05/picpay-logo-1.png" alt="PicPay logo" />
+                                <Image className="mx-auto teste" src="https://geekpublicitario.com.br/wp-content/uploads/2018/03/novo-logo-santander-fundo-vermelho.jpg" alt="Santander logo" />
+                                <Image className="mx-auto teste" src="https://logodownload.org/wp-content/uploads/2015/02/Burger-king-logo-5.png" alt="Burger King logo" />
                             </Card.Text>
                         </Card.Body>
                     </Card>

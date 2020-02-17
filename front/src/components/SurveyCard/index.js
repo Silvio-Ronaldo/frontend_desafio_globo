@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Accordion, Button, Card, ProgressBar } from 'react-bootstrap';
 import QuestionModal from '../../components/QuestionModal';
+import api from '../../services/api';
 
 export default function Survey(survey) {
+
+    const [yes, setYes] = useState(0);
+    const [no, setNo] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        async function loadSurvey() {
+            const { yes, no, total } = await api.get(`/getVotes/${survey._id}`);
+            setYes(yes);
+            setYes(no);
+            setYes(total);
+        }
+        loadSurvey();
+    }, [no, survey._id, survey.id, total, yes]);
 
     return (
         <Accordion className="col-sm-6 mb-3 mx-auto" defaultActiveKey="1">
@@ -20,8 +35,8 @@ export default function Survey(survey) {
                     <Card.Body>
                         <Card.Text className="row">
                             <ProgressBar className="col-sm-12 p-0">
-                                <ProgressBar variant="success" now={70} label="70%" key={1} />
-                                <ProgressBar variant="danger" now={30} label="30%" key={2} />
+                                <ProgressBar variant="success" now={(yes / total) * 100} label={`${(yes / total) * 100}%`} key={1} />
+                                <ProgressBar variant="danger" now={(no / total) * 100} label={`${(no / total) * 100}%`} key={2} />
                             </ProgressBar>
                         </Card.Text>
                     </Card.Body>

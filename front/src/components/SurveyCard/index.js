@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion, Button, Card, ProgressBar } from 'react-bootstrap';
+import QuestionModal from '../../components/QuestionModal';
 
 export default function Survey(survey) {
 
@@ -10,6 +11,10 @@ export default function Survey(survey) {
                     <Accordion.Toggle as={Button} variant="dark" eventKey="0">
                         {survey.content}
                     </Accordion.Toggle>
+                    <QuestionModal
+                        questionary={survey}
+                        type='getSurvey'
+                    />
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>

@@ -5,22 +5,22 @@ import { Modal, Button } from 'react-bootstrap';
 import QuestionModal from '../../components/QuestionModal';
 import Item from '../QuestionInpunt'
 
-export default function Header(questionary) {
+export default function Header(survey) {
   //Popup p/ cadastrar questionario
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const questions = questionary.questions;
+  const questions = survey.questions;
   return (
     <Container className="col-sm-4" >
       <Info>
-        <Title className="" onClick={handleShow}>{questionary.formName}</Title>
-        <Description> <Moment format="DD/MM/YYYY HH:mm">{questionary.date}</Moment></Description>
+        <Title className="" onClick={handleShow}>{survey.formName}</Title>
+        <Description> <Moment format="DD/MM/YYYY HH:mm">{survey.date}</Moment></Description>
       </Info>
       <QuestionModal
-        questionary={questionary}
-        type='getQuestion'
+        questionary={survey}
+        type='getSurvey'
       />
 
       <Modal show={show} onHide={handleClose} animation={false}>

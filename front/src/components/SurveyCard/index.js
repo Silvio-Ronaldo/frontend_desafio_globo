@@ -5,7 +5,7 @@ import QuestionModal from '../../components/QuestionModal';
 export default function Survey(survey) {
 
     return (
-        <Accordion className="col-sm-3" defaultActiveKey="1">
+        <Accordion className="col-sm-6 mb-3 mx-auto" defaultActiveKey="1">
             <Card>
                 <Card.Header>
                     <Accordion.Toggle className="col-sm-12" as={Button} variant="dark" eventKey="0">

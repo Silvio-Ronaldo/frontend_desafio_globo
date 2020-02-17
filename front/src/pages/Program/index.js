@@ -41,7 +41,7 @@ export default function Program({ match }) {
               <Tabs defaultActiveKey="Quiz" id="uncontrolled-tab-example">
                 <Tab eventKey="Quiz" title="Quiz">
                   <Card.Body>
-                    <Card.Text className="row text-left" id="questionary-container">
+                    <Card.Text className="row text-left justify-content-center" id="questionary-container">
                       {questionaries.map(questionary => (
                         <Item {...questionary} />
                       ))}
@@ -51,7 +51,7 @@ export default function Program({ match }) {
 
                 <Tab eventKey="Enquete" title="Enquete">
                   <Card.Body>
-                    <Card.Text className="row text-left" id="survey-container">
+                    <Card.Text className="row text-left justify-content-center" id="survey-container">
                       {surveys.map(survey => (
                         <Survey {...survey} />
                       ))}

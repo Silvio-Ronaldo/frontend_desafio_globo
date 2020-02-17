@@ -13,7 +13,7 @@ export default function Header(questionary) {
 
   const questions = questionary.questions;
   return (
-    <Container className="col-sm-4" >
+    <Container className="col-sm-3">
       <Info>
         <Title className="" onClick={handleShow}>{questionary.formName}</Title>
         <Description> <Moment format="DD/MM/YYYY HH:mm">{questionary.date}</Moment></Description>

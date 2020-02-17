@@ -21,7 +21,6 @@ export default function Paterns() {
                                 <Image className="mx-auto" src="https://logodownload.org/wp-content/uploads/2018/05/picpay-logo-1.png" alt="PicPay logo" />
                                 <Image className="mx-auto" src="https://geekpublicitario.com.br/wp-content/uploads/2018/03/novo-logo-santander-fundo-vermelho.jpg" alt="Santander logo" />
                                 <Image className="mx-auto" src="https://logodownload.org/wp-content/uploads/2015/02/Burger-king-logo-5.png" alt="Burger King logo" />
-                                <Image className="mx-auto" src="https://tecnoblog.net/wp-content/uploads/2015/07/spotify-novo-verde.jpg" alt="Spotify logo" />
                             </Card.Text>
                         </Card.Body>
                     </Card>

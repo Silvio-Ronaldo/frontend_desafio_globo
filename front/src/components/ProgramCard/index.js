@@ -20,7 +20,7 @@ export default function Header(questionary) {
       </Info>
       <QuestionModal
         questionary={questionary}
-        type='getQuestion'
+        type='quiz'
       />
 
       <Modal show={show} onHide={handleClose} animation={false}>

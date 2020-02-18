@@ -58,9 +58,6 @@ export default function Program({ match }) {
                     </Card.Text>
                   </Card.Body>
                 </Tab>
-                <Tab eventKey="Comentarios" title="Comentarios">
-                  <h1>Delicinha</h1>
-                </Tab>
               </Tabs>
             </Card.Header>
           </Card>

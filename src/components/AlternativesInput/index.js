@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { InputGroup, FormControl } from 'react-bootstrap';
 
 export default function Header(alternative, index) {

@@ -62,6 +62,7 @@ function Main() {
   useEffect(() => {
     async function loadInfo() {
       const programs = await api.get('/listPrograms');
+      console.log(programs);
       setPrograms(programs.data);
 
       const users = await api.get('/getUsers');

@@ -28,7 +28,7 @@ export default function Survey(survey) {
                     </Accordion.Toggle>
                     <QuestionModal
                         questionary={survey}
-                        type='getSurvey'
+                        type='enquete'
                     />
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">

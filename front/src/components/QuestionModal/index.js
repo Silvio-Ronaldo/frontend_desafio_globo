@@ -29,10 +29,10 @@ export default function QuestionModal({ questionary, type }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [code, setCode] = useState('');
 
-  async function handleQRCode(id) {
-    console.log(`/generateQRCode/${type}/${id}`);
-    const uri = await api.get(`/generateQRCode/${type}/${id}`);
-    setCode(uri.data.qrcode);
+  async function handleQRCode(qrcodeID) {
+
+    const uri = await api.get(`/generateQRCode/${type}/${qrcodeID}`);
+    setCode(JSON.stringify(uri.data));
     openModal();
   }
 
@@ -48,7 +48,7 @@ export default function QuestionModal({ questionary, type }) {
   return (
     <div>
       <center>
-        <MdCameraAlt size={25} color="black" onClick={() => handleQRCode(questionary._id)} />
+        <MdCameraAlt size={25} color="black" onClick={() => handleQRCode(questionary.qrcodeID)} />
       </center>
       <Modal
         isOpen={modalIsOpen}

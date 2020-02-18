@@ -25,13 +25,14 @@ const customStyles = {
     zIndex: 2
   }
 };
-export default function PartnersModal({ company, product, image, uri }) {
+export default function PartnersModal({ company, product, image, type, qrcodeID }) {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [code, setCode] = useState('');
 
   async function handleQRCode(uri) {
-    setCode(uri);
+    const url = await api.get(`/generateQRCode/${type}/${qrcodeID}`);
+    setCode(JSON.stringify(url.data));
     openModal();
   }
 
@@ -45,7 +46,7 @@ export default function PartnersModal({ company, product, image, uri }) {
 
   return (
     <div>
-      <Image className="mx-auto teste" src={image} onClick={() => handleQRCode(uri)} style={{ borderRadius: 10 }} />
+      <Image className="mx-auto teste" src={image} onClick={() => handleQRCode(qrcodeID)} style={{ borderRadius: 10 }} />
       <Company>{company}</Company>
       <Product>{product}</Product>
       <Modal

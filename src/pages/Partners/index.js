@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../services/api.js';
 import { Card, Image } from 'react-bootstrap';
 import './styles.css';
 import Header from '../../components/Header';

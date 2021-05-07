@@ -24,6 +24,17 @@
 
 
 
+<h2>🤝 Contributors</h2>
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/H3NRY-JR"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54047421?v=4" width="100px;" alt="Henry Junior"/><br /><sub><b>Henry Junior</b></sub></a><br /><a href="https://github.com/H3NRY-JR" title="Henry Junior">☕</a></td>
+   <td align="center"><a href="https://github.com/JoedSilva18"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/41526188?v=4" width="100px;" alt="Joed Silva"/><br /><sub><b>Joed Silva</b></sub></a><br /><a href="https://github.com/JoedSilva18" title="Joed Silva">☕</a></td>
+   <td align="center"><a href="https://github.com/lucaslf02"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49107904?v=4" width="100px;" alt="Lucas Lemes"/><br /><sub><b>Lucas Lemes</b></sub></a><br /><a href="https://github.com/lucaslf02" title="Lucas Lemes">☕</a></td>
+  </tr>
+</table></br>
+
+
+
 <h2>👽 Author</h2>
 <table>
   <tr>
